@@ -1,0 +1,93 @@
+{
+  "schema": "dev",
+  "tableName": "test",
+  "toPackage": "com.mphasis.dogbreed",
+  "columns": [
+    {
+      "name": "id",
+      "dataType": "bigserial",
+      "validationConstraints": "primary_key",
+      "databaseConstraints": "PRIMARY KEY"
+    },
+    {
+      "name": "term",
+      "dataType": "varchar(255)",
+      "validationConstraints": "NOT NULL"
+    },
+    {
+      "name": "description",
+      "dataType": "varchar(255)",
+      "validationConstraints": ""
+    },
+    {
+      "name": "domain_id",
+      "dataType": "bigint",
+      "validationConstraints": ""
+    },
+    {
+      "name": "added_by",
+      "dataType": "varchar(64)",
+      "validationConstraints": ""
+    },
+    {
+      "name": "added_on",
+      "dataType": "date",
+      "validationConstraints": ""
+    },
+    {
+      "name": "last_modified_by",
+      "dataType": "bigint",
+      "validationConstraints": ""
+    },
+    {
+      "name": "last_modified_on",
+      "dataType": "date",
+      "validationConstraints": ""
+    }
+  ],
+  "requirement": [
+    "getById"
+  ],
+  "services": [
+    {
+      "field": [
+        "domain_id",
+        "added_by"
+      ],
+      "mapping": "GET",
+      "action": "count",
+      "orderBy": "desc",
+      "groupBy": "",
+      "params": [
+        {
+          "paramName": "domainId",
+          "paramType": "int",
+          "paramRequestType": "path"
+        },
+        {
+          "paramName": "addedBy",
+          "paramType": "String",
+          "paramRequestType": "path"
+        }
+      ],
+      "returnType": "int"
+    },
+    {
+      "field": [
+        "domain_id"
+      ],
+      "mapping": "GET",
+      "action": "getall",
+      "orderBy": "DomainIdAsc",
+      "groupBy": "",
+      "params": [
+        {
+          "paramName": "domainId",
+          "paramType": "int",
+          "paramRequestType": "path"
+        }
+      ],
+      "returnType": "List<GlossaryModel>"
+    }
+  ]
+}

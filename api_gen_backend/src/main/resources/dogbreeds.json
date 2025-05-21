@@ -1,0 +1,21 @@
+{
+    "schema": "dev",
+    "tableName" : "compute",
+    "toPackage" : "com.mphasis.compute",
+    "columns": [
+      {
+        "name": "id",
+        "dataType": "bigserial",
+        "constraints": "primary key"
+      },
+      {
+        "name": "name",
+        "dataType": "varchar(32)",
+        "constraints": "not null"
+      }
+      
+    ],
+  
+    "requirement" : ["getById","getAll","add","count"]
+  }
+  
