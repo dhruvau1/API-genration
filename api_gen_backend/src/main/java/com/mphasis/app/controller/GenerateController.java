@@ -23,4 +23,10 @@ public class GenerateController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @GetMapping("/testConnection")
+    ResponseEntity<?> testFunction()
+    {
+        return ResponseEntity.ok("the connection is working");
+    }
 }
