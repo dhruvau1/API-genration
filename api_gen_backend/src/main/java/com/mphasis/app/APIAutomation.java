@@ -25,7 +25,6 @@ public class APIAutomation {
         CreateDatabase createDB = new CreateDatabase();
 
         try {
-            // Convert JsonNode to Table object
             table = objectMapper.treeToValue(inputJson, Table.class);
             System.out.println("Parsed Table from JSON");
         } catch (Exception e) {
@@ -47,7 +46,6 @@ public class APIAutomation {
             savePath = support.getSavePath(savePath, table.getToPackage());
 
             try {
-                // If createQuery still needs raw JSON as a file, you may need to adjust this
                 createDB.createQuery(inputJson.toString());
             } catch (Exception e) {
                 System.out.println("Error generating SQL: " + e.getMessage());
