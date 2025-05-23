@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Columns from './Columns';
 import Starter from './Starter';
 import Services from './Services';
+import Requirements from './Requirements';
 
 const Form = () => {
   const [columns, setColumns] = useState([]);
@@ -11,6 +12,7 @@ const Form = () => {
     <>
       <Starter />
       <Columns columns={columns} setColumns={setColumns} />
+      <Requirements />
       <Services services={services} setServices={setServices} columns={columns}/>
     </>
   )
