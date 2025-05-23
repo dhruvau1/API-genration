@@ -1,19 +1,20 @@
 package com.mphasis.app.model;
 
 import com.mphasis.app.support.SupportFunction;
+import java.util.List;
 
 public class Column {
 	private String name;
 	private String dataType;
-	private String validationConstraints;
-	private String databaseConstraints;
+	private List<String> validationConstraints;
+	private List<String> databaseConstraints;
 	private SupportFunction support = new SupportFunction();
 
 	public Column() {
 
 	}
 
-	public Column(String name, String dataType, String validationConstraints, String databaseConstraints) {
+	public Column(String name, String dataType, List<String> validationConstraints, List<String> databaseConstraints) {
 		super();
 		this.name = name;
 		this.dataType = dataType;
@@ -45,19 +46,19 @@ public class Column {
 		this.dataType = dataType;
 	}
 
-	public String getvalidationConstraints() {
+	public List<String> getvalidationConstraints() {
 		return validationConstraints;
 	}
 
-	public void setvalidationConstraints(String validationConstraints) {
+	public void setvalidationConstraints(List<String> validationConstraints) {
 		this.validationConstraints = validationConstraints;
 	}
 
-	public String getdatabaseConstraints() {
+	public List<String> getdatabaseConstraints() {
 		return databaseConstraints;
 	}
 
-	public void setdatabaseConstraints(String databaseConstraints) {
+	public void setdatabaseConstraints(List<String> databaseConstraints) {
 		this.databaseConstraints = databaseConstraints;
 	}
 

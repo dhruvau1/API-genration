@@ -78,8 +78,8 @@ public class CreateEntity {
         String javaName = column.getJavaName();
         String sqlName = column.getSQLName();
         String constraints = support.getConstraintsAnnotations(column.getvalidationConstraints(), javaName, sqlName).trim();
-        boolean isPrimaryKey = column.getvalidationConstraints().toUpperCase().contains("PRIMARY_KEY");
-        boolean isUnique = column.getvalidationConstraints().toUpperCase().contains("UNIQUE");
+        boolean isPrimaryKey = column.getvalidationConstraints().contains("PRIMARY KEY");
+        boolean isUnique = column.getvalidationConstraints().contains("UNIQUE");
     
         // Add @Id and @GeneratedValue for primary key
         if (isPrimaryKey) {

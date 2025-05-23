@@ -58,15 +58,15 @@ public class SupportFunction {
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 
-	public String getConstraintsAnnotations(String constraints, String columnName, String sqlName) {
+	public String getConstraintsAnnotations(List<String> constraints, String columnName, String sqlName) {
 		if (constraints == null || constraints.isEmpty()) {
 			return "";
 		}
 
 		StringBuilder annotations = new StringBuilder();
-		String[] parts = constraints.split(",");
+	
 
-		for (String rawPart : parts) {
+		for (String rawPart : constraints) {
 			String part = rawPart.trim().toUpperCase();
 
 			switch (part) {

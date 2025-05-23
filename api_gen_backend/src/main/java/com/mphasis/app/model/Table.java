@@ -77,7 +77,7 @@ public class Table {
 	}
 	
 	
-	public void addColumn(String name, String dataType, String validationConstraints, String databaseConstraints) {
+	public void addColumn(String name, String dataType, List<String> validationConstraints, List<String> databaseConstraints) {
 		Column column = new Column(name, dataType, validationConstraints, databaseConstraints);
 		
 		columns.add(column);

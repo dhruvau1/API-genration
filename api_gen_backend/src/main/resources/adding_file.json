@@ -7,7 +7,7 @@
       "name": "id",
       "dataType": "bigserial",
       "validationConstraints": "primary_key",
-      "databaseConstraints": "PRIMARY KEY"
+      "databaseConstraints": "PRIMARY KEY NOT NULL"
     },
     {
       "name": "term",
